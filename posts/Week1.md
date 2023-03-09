@@ -9,8 +9,6 @@
 	<li>Staff Dealing Policy</li>
 </ul>
 
-<p style="width: 100%">![Binance Culture](/_images/image38.jpg)</p>
-
 <img src="http://35.240.250.152/wp-content/uploads/2023/03/image38-scaled.jpg" alt="Binance Culture" width="100%">
 
 <ul>
@@ -22,7 +20,7 @@
 
 Arbitrum is an EVM-compatible Layer 2 scaling solution for the Ethereum network that leverages optimistic rollups to introduce several efficiency improvements to transaction processing and their costs. To do this, Arbitrum bundles several off-chain transactions together in a batch before parsing the result to the Ethereum network.
 
-<img src="../_images/image1.jpg" alt="BlockchainLayer2" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image1-scaled.jpg" alt="BlockchainLayer2" width="100%">
 
 Arbitrum aims to reduce transaction fees and congestion by moving as much computation and data storage off of Ethereum’s main blockchain (layer 1) as it can. Storing data off of Ethereum’s blockchain is known as Layer 2 scaling solutions. This is because it is built on top of Layer 1 (the main Ethereum network) and retains the security of Ethereum.
 
@@ -41,15 +39,15 @@ https://www.benzinga.com/money/what-is-arbitrum
 
 ## ==== Evolution of Application Designs, What are Microservices? ====
 
-<img src="../_images/image35.jpg" alt="Monolithic" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image35-scaled.jpg" alt="Monolithic" width="100%">
 
 Monolithic applications are hard to maintain and scale as such applications are highly tangled together. Note: we still use monolithic applications when considering a smaller user-base as they are easier to manage and monitor, and are more secure.
 
-<img src="../_images/image36.jpg" alt="MultiTier" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image36-scaled.jpg" alt="MultiTier" width="100%">
 
 Even with a Multi-Tier application design (Presentation Layer managed by Frontend Devs, Logic Layer managed by Backend Devs and Data Layer managed by Data Admins), you overall application is still Monolithic by design when considering complex integrations with systems.
 
-<img src="../_images/image37.jpg" alt="Microservices" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image37-scaled.jpg" alt="Microservices" width="100%">
 
 With a microservice application design, each microservice is responsible for a single business function, end-to-end, and independent from other microservices. They communicate with other microservices through APIs via lightweight protocols like HTTP. 
 
@@ -81,7 +79,7 @@ Benefits of a decoupled (or headless) architecture (frontend from backend):
 
 Note: Headless architectures have your backend and frontends on different servers. Decoupled architectures are a superset of your Headless architecture, just with a presentation layer integrated.
 
-<img src="../_images/image41.jpg" alt="HeadlessVsDecoupled" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image41-scaled.jpg" alt="HeadlessVsDecoupled" width="100%">
 
 What I have developed with regards to this Accountability Blog, is a DECOUPLED architecture. The WordPress CMS (tied to a running local mariaDB) has an exposed presentation layer to have users excess the CMS, and add blog posts manually via UI. The WP RESTful API then exposes these posts to external React.JS frontend(s).
 

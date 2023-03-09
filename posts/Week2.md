@@ -71,33 +71,33 @@ Publishing Services:
 
 The goal of a kubernetes service is to provide an abstraction layer to help with loose coupling (to interconnect components in a system). A Kubernetes Service works by identifying a set of Pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.
 
-<img src="../_images/image13.jpg" alt="KubeServices0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image13-scaled.jpg" alt="KubeServices0" width="100%">
 
 When you are working with multi-port containers, you HAVE to name the ports in your services.
 
-<img src="../_images/image14.jpg" alt="multi-port" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image14-scaled.jpg" alt="multi-port" width="100%">
 
 ClusterIP: Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default that is used if you don't explicitly specify a type for a Service.
 
 Headless Service: Meant for stateful resources when you intend to point to a specific IP and port of the pod in question. To do so, you are required manually set the ClusterIP to "None". 
 
-<img src="../_images/image17.jpg" alt="headless0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image17-scaled.jpg" alt="headless0" width="100%">
 
-<img src="../_images/image18.jpg" alt="headless1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image18-scaled.jpg" alt="headless1" width="100%">
 
 Note: when you deploy a headless service, it will always be IN CONJUNCTION with another service. In the above example, the usual ClusterIP service is used to route normal clients' requests from the pod, while the headless service is only used to route requests directly into the mongo-db, and for the mongo-db applications to communicate with one another.
 
 https://stackoverflow.com/questions/52707840/what-is-a-headless-service-what-does-it-do-accomplish-and-what-are-some-legiti
 
-<img src="../_images/image19.jpg" alt="NodePort0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image19-scaled.jpg" alt="NodePort0" width="100%">
 
 NodePort: Exposes the Service (arguably ClusterIP) on each Node's IP at a static port (the NodePort). To make the node port available, Kubernetes sets up a cluster IP address, the same as if you had requested a Service of type: ClusterIP.
 
-<img src="../_images/image20.jpg" alt="NodePort1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image20-scaled.jpg" alt="NodePort1" width="100%">
 
 Note: by opening up the ports to ANY single of your worker nodes, you are exposing dangers to your entire system as your Service (that randomly routes traffic to pods across different worker nodes) will now compromise your entire system.
 
-<img src="../_images/image21.jpg" alt="NodePort2" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image21-scaled.jpg" alt="NodePort2" width="100%">
 
 LoadBalancer: Exposes the Service (NodePort) externally using a cloud provider's load balancer. Therefore, under the hood of your cloud provider's security policies etc. (protecting your LB's external IP), you have greater security that prevents external access into your cluster.
 
@@ -113,37 +113,37 @@ Deploying with AWS ALB:
 
 ### --------------------------------- Kubernetes Ingress ---------------------------------
 
-<img src="../_images/image23.jpg" alt="externalService" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image23-scaled.jpg" alt="externalService" width="100%">
 
 Be it via a NodePort or a Loadbalancer, exposing an application via its External Service (IP address and/or port) is not production quality, imposing many security concerns.
 
-<img src="../_images/image22.jpg" alt="vsIngress" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image22-scaled.jpg" alt="vsIngress" width="100%">
 
-<img src="../_images/image24.jpg" alt="Ingress0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image24-scaled.jpg" alt="Ingress0" width="100%">
 
 Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource. An Ingress may be configured to give Services externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer name-based virtual hosting.
 
-<img src="../_images/image25.jpg" alt="Ingress1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image25-scaled.jpg" alt="Ingress1" width="100%">
 
 Note: when configuring an Ingress, we use a typeless service (arguably ClusterIP).
 
-<img src="../_images/image26.jpg" alt="IngressController0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image26-scaled.jpg" alt="IngressController0" width="100%">
 
-<img src="../_images/image29.jpg" alt="nginxIngressController" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image29-scaled.jpg" alt="nginxIngressController" width="100%">
 
 Note: we need to deploy an Ingress Controller in conjunction with the Ingress service to help evaluate the rules, manage re-direction and serve as an ENTRYPOINT to the cluster.
 
-<img src="../_images/image27.jpg" alt="IngressController1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image27-scaled.jpg" alt="IngressController1" width="100%">
 
 Above is a common bare-metal architecture for Ingress implementation. We use a reverse proxy to route traffic to the Ingress Controller (Pod).
 
-<img src="../_images/image28.jpg" alt="LBtoIngressController" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image28-scaled.jpg" alt="LBtoIngressController" width="100%">
 
 Else, for a more production-level architecture, you will configure a CSP's Load Balancer as the entry pointn to your cluster as shown above.
 
-<img src="../_images/image3.jpg" alt="KubeServices" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image3-scaled.jpg" alt="KubeServices" width="100%">
 
-<img src="../_images/image4.jpg" alt="KubeServicesEval" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image4-scaled.jpg" alt="KubeServicesEval" width="100%">
 
 Difference between Volumes and PersistentVolumes: 
 
@@ -158,7 +158,7 @@ Storage management is essential in Kubernetes, especially in  large environments
 
 Difference between PersistentVolumes (PVs) and PersistentVolumeClaims (PVCs):
 
-<img src="../_images/image5.jpg" alt="PVCvsPV" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image5-scaled.jpg" alt="PVCvsPV" width="100%">
 
 <ul>
 	<li>PVs are created by the cluster administrator or dynamically by Kubernetes, whereas users/developers create PVCs.</li>
@@ -173,7 +173,7 @@ Deployment is a Kubernetes controller that matches the current state of your clu
 
 Deployments are usually used for stateless applications. However, you can save the state of deployment by attaching a Persistent Volume to it and make it stateful, but all the pods of a deployment will be sharing the same Volume and data across all of them will be same.
 
-<img src="../_images/image6.jpg" alt="PersistenceDeployments" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image6-scaled.jpg" alt="PersistenceDeployments" width="100%">
 
 Deployments, as discussed, creates a ReplicaSet which then creates a Pod so whenever you update the deployment using RollingUpdate(default) strategy, a new ReplicaSet is created and the Deployment moves the Pods from the old ReplicaSet to the new one at a controlled rate. Rolling Update means that the previous ReplicaSet doesn’t scale to 0 unless the new ReplicaSet is up & running ensuring 100% uptime. If an error occurs while updating, the new ReplicaSet will never be in Ready state, so old ReplicaSet will not terminate again ensuring 100% uptime in case of a failed update. In Deployments, you can also manually roll back to a previous ReplicaSet, if needed in case if your new feature is not working as expected.
 
@@ -190,15 +190,15 @@ Statefulsets vs Deployments (Stateless applications)
 
 StatefulSets are useful in case of Databases especially when we need Highly Available Databases in production as we create a cluster of Database replicas with one being the primary replica and others being the secondary replicas. The primary will be responsible for read/write operations and secondary for read only operations and they will be syncing data with the primary one.
 
-<img src="../_images/image15.jpg" alt="PersistenceSts2" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image15-scaled.jpg" alt="PersistenceSts2" width="100%">
 
-<img src="../_images/image7.jpg" alt="PersistenceSts0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image7-scaled.jpg" alt="PersistenceSts0" width="100%">
 
 If the primary goes down, any of the secondary replica will become primary and the StatefulSet controller will create a new replica in account of the one that went down, which will now become a secondary replica. Note that when a new replica (worker pod) is spun up, it will take the state from another workder node instead.
 
-<img src="../_images/image8.jpg" alt="PersistenceSts1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image8-scaled.jpg" alt="PersistenceSts1" width="100%">
 
-<img src="../_images/image16.jpg" alt="PersistenceSts3" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image16-scaled.jpg" alt="PersistenceSts3" width="100%">
 
 A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod. Some typical use cases of a DaemonSet is to run cluster level applications like:
 
@@ -208,11 +208,11 @@ A DaemonSet is a controller that ensures that the pod runs on all the nodes of t
 
 However, Daemonset automatically doesn’t run on nodes which have a taint e.g. Master. You will have to specify the tolerations for it on the pod.
 
-<img src="../_images/image9.jpg" alt="DaemonTaints" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image9-scaled.jpg" alt="DaemonTaints" width="100%">
 
 When you deploy the daemonset, it will create pods equal to the number of nodes. In terms of behavior, it will behave the same as Deployments i.e. all pods will share the same Persistent Volume and are stateless pods.
 
-<img src="../_images/image10.jpg" alt="PersistenceDaemon" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image10-scaled.jpg" alt="PersistenceDaemon" width="100%">
 
 If you update a DaemonSet, it also performs RollingUpdate i.e. one pod will go down and the updated pod will come up, then the next replica pod will go down in same manner e.g. If I change the image of the above DaemonSet, one pod will go down, and when it comes back up with the updated image, only then the next pod will terminate and so on. If an error occurs while updating, so only one pod will be down, all other pods will still be up, running on previous stable version. Unlike Deployments, you cannot roll back your DaemonSet to a previous version.
 

@@ -93,7 +93,7 @@ To get started with Karpenter in any Kubernetes cluster, ensure there is some co
 
 Karpenter observes the aggregate resource requests of unscheduled pods and makes decisions to launch new nodes and terminate them to reduce scheduling latencies and infrastructure costs. Karpenter does this by observing events within the Kubernetes cluster and then sending commands to the underlying cloud provider’s compute service, such as Amazon EC2. Simply put, Karpenter uses a proprietary bin-packing algorithm under the hood to help bin-pack your applications into your kubernetes nodes. 
 
-<img src="../_images/image12.jpg" alt="Karpenter" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image12-scaled.jpg" alt="Karpenter" width="100%">
 
 Accelerated Computing: Karpenter works with all kinds of Kubernetes applications, but it performs particularly well for use cases that require rapid provisioning and deprovisioning large numbers of diverse compute resources quickly. For example, this includes batch jobs to train machine learning models, run simulations, or perform complex financial calculations. You can leverage custom resources of nvidia.com/gpu, amd.com/gpu, and aws.amazon.com/neuron for use cases that require accelerated EC2 instances.
 
