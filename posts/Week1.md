@@ -9,9 +9,7 @@
 	<li>Staff Dealing Policy</li>
 </ul>
 
-<p style="width: 100%">
-![Binance Culture](/_images/image38.jpg)
-</p>
+<p style="width: 100%">![Binance Culture](/_images/image38.jpg)</p>
 
 <img src="http://35.240.250.152/wp-content/uploads/2023/03/image38-scaled.jpg" alt="Binance Culture" width="100%">
 
