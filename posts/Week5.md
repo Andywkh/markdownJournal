@@ -36,7 +36,7 @@ Helm is popularly known as the package manager for Kubernetes. Helm bundles a Ku
     $ helm repo update
     $ helm repo list
 ```
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image42-scaled.jpg" alt="Helm3.0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image42.png" alt="Helm3.0" width="100%">
 
 ```bash
 	$ helm create <chart name>
@@ -186,15 +186,15 @@ https://stellate.co/blog/deep-dive-into-caching-rest-apis
 
 ### ------------------- Token-Based Authentication with RESTful APIs -------------------
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image39-scaled.jpg" alt="TokenAuth" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image39.png" alt="TokenAuth" width="100%">
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image40-scaled.jpg" alt="Auth2.0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image40.png" alt="Auth2.0" width="100%">
 
 ### ----------------------------------- GraphQL APIs -----------------------------------
 
 GraphQL is a relatively new API query language that was developed and open-sourced by Facebook in 2012. It’s designed to handle the complex, nested data dependencies found in modern applications. Specifically, it enables declarative data fetching to allow clients to specify exactly what data is needed from an API.
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image2-scaled.jpg" alt="RESTvsGraphQL" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image2.png" alt="RESTvsGraphQL" width="100%">
 
 GraphQL is a relatively new API query language that was developed and open-sourced by Facebook in 2012. It’s designed to handle the complex, nested data dependencies found in modern applications. Specifically, it enables declarative data fetching to allow clients to specify exactly what data is needed from an API.
 

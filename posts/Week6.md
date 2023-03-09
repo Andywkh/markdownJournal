@@ -10,7 +10,7 @@ Before we start on ArgoCD. What is the difference between Continuous Delivery an
 
 There can be multiple, parallel test stages before a production deployment.  With continuous deployment, production happens automatically without explicit approval. 
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image30-scaled.jpg" alt="CICDpipeline" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image30.png" alt="CICDpipeline" width="100%">
 
 Continuous delivery automates the entire software release process. With continuous delivery, every code change is built, tested, and then pushed to a non-production testing or staging environment. Every revision that is committed triggers an automated flow that builds, tests, and then stages the update. The final decision to deploy to a live production environment is then triggered by the developer manually.
 
@@ -25,7 +25,7 @@ Challenges faced with a push-based CD tool (e.g. classic Jenkins)
     <li>Once Jenkins deploys any changes into the environment, no visibility of deployment status (do not know if deployment failed etc.).</li>
 </ul>
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image31-scaled.jpg" alt="ArgoPull" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image31.png" alt="ArgoPull" width="100%">
 
 ArgoCD is a Kubernetes-native continuous DELIVERY (CD) tool. Unlike external CD tools that only enable push-based deliveries/deployments, ArgoCD agents PULL updated code from Git repositories and deploy it (if configured instead of deliver) directly to Kubernetes resources.
 
@@ -36,15 +36,15 @@ It is a Best Practice to separate the git repository for your application source
     <li>You do not want complex logics in your CI pipeline.</li>
 </ul>
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image32-scaled.jpg" alt="GitOps" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image32.png" alt="GitOps" width="100%">
 
 As described above, when someone manually changes the state of the cluster, ArgoCD will simply re-deploy the cluster into its actual state by tracking and regarding the Git repository as its Single Source of Truth (when Actual and Desired states have diverged).
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image33-scaled.jpg" alt="GitOps with Multiple Clusters 0" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image33.png" alt="GitOps with Multiple Clusters 0" width="100%">
 
 Note: you only need 1 ArgoCD instance to manage a fleet of K8s clusters.
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image34-scaled.jpg" alt="GitOps with Multiple Clusters 1" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image34.png" alt="GitOps with Multiple Clusters 1" width="100%">
 
 When looking to implement a sequence of phases into your CD pipeline (e.g. Deploying to a development before a staging, and lastly the production environment.), you can use git branches, but is better recommended to use overlays with kustomize.
 
@@ -130,7 +130,7 @@ https://kubernetes.io/docs/tutorials/security/ns-level-pss/
 
 Kyverno is a policy engine designed specifically for Kubernetes. Kyverno runs as a dynamic admission controller in a Kubernetes cluster. Kyverno receives validating and mutating admission webhook HTTP callbacks from the kube-apiserver and applies matching policies to return results that enforce admission policies or reject requests.
 
-<img src="http://35.240.250.152/wp-content/uploads/2023/03/image11-scaled.jpg" alt="KyvernoHighLevelArch" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image11.png" alt="KyvernoHighLevelArch" width="100%">
 
 https://kyverno.io/docs/introduction/
 https://kyverno.io/policies/pod-security/
