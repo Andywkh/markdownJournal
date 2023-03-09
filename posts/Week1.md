@@ -9,9 +9,11 @@
 	<li>Staff Dealing Policy</li>
 </ul>
 
-![Binance Culture](/_images/image38.jpg )
+<p style="width: 100%">
+![Binance Culture](/_images/image38.jpg)
+</p>
 
-<img src="/_images/image38.jpg" alt="Binance Culture" width="100%">
+<img src="http://35.240.250.152/wp-content/uploads/2023/03/image38-scaled.jpg" alt="Binance Culture" width="100%">
 
 <ul>
 	<li>New Employee Training (done in Week 8)</li>
